@@ -1,0 +1,1 @@
+@media screen and (orientation:portrait){.landscape{display:none ! important;}.portrait{display:inline ! important;}.portrait-xs{display:inline ! important;}}@media screen and (orientation:landscape){.landscape{display:inline ! important;}.portrait{display:none ! important;}.portrait-xs{display:none ! important;}}

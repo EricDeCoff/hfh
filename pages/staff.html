@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<style>
+figure, figcaption{ /*add any other html5 elements you use*/ 
+    display:block;
+} 
+/***Now style the containing div that we gave the id 'polaroid'***/ 
+#polaroid{
+    padding:20px 10px;
+    /*setting a width and adding overflow:hidden will clear the floats we're going to apply to figure*/ 
+    width:100%;
+    overflow:hidden;
+}
+/***Position the figures containing the images and captions***/ 
+#polaroid figure{
+    min-height: 230px;
+    margin-bottom: 14px;
+    margin-right: 14px;
+    padding: 16px 8px 10px 8px; /*size of the frame*/ 
+    /*give the frame's background colour a gradient*/
+    background: #eee6d8; /*fallback colour for browsers that don't support gradients*/ 
+    background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+    background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+    background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+    background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+    background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+    /*give the Polaroids a small drop shadow*/ 
+    -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+}
+#polaroid figure portrait{
+    width: 230px;    
+}
+@media screen and (orientation: landscape){
+    #figIMG{
+        margin-right: 14px;
+        position: relative;
+        float: right;
+    }  
+}
+    
+/***Rotate the images 1 degrees anti-clockwise***/
+#polaroid figure{
+    -webkit-transform:rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    /*prevent rotated text in the caption being jagged in Chrome and Safari*/    
+    -webkit-backface-visibility:hidden; 
+}
+/***Rotate each even numbered image 2 degrees clockwise***/ 
+ #polaroid figure:nth-child(even) { /*see support section below for more info on nth-child*/
+    -webkit-transform:rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+    /*because the image is rotated the opposite way, 
+     the drop-shadow needs moving to the other side of the image*/ 
+    -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+    box-shadow: -4px 4px 8px -4px rgba(0, 0, 0, .75);
+}
+
+</style>
+<div id="ourStaff"><div id="polaroid">Staff Info Goes Here</div></div>
+<div id="hfhStaff" class="hidden"></div>
